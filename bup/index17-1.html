@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>(Animated) Text Fills - Demo 17</title>
+    <meta name="description" content="How to Create (Animated) Text Fills with various techniques" />
+    <meta name="keywords" content="text, fill, animation, svg, background-clip, clip, mask" />
+    <meta name="author" content="Yoksel for Codrops" />
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/style17-1.css" />
+    <!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+        <div class="content">
+            <svg viewBox="0 0 600 350">
+
+                <!-- Symbol with text -->
+                <symbol id="Tamvan">
+                    <text text-anchor="middle" x="50%" y="50%" dy=".35em" class="text--line">
+                        Sangat
+                    </text>
+                </symbol>
+				
+				
+
+                <!-- Clippath  with text -->
+                <clippath id="cp-text">
+                    <text text-anchor="middle" x="50%" y="50%" dy=".35em" class="text--line">
+                        Sangat
+                    </text>
+                </clippath>
+
+                <!-- Group for shadow -->
+                <g clip-path="url(#cp-text)" class="shadow">
+                    <rect width="100%" height="100%" class="anim-shape anim-shape--shadow"></rect>
+                </g>
+
+                <!-- Group with clippath for text-->
+                <g clip-path="url(#cp-text)" class="colortext">
+                    <!-- Animated shapes inside text -->
+                    <rect width="100%" height="1000%" class="anim-shape"></rect>
+                    <rect width="80%" height="1000%" class="anim-shape"></rect>
+                    <rect width="60%" height="1000%" class="anim-shape"></rect>
+                    <rect width="40%" height="1000%" class="anim-shape"></rect>
+                    <rect width="20%" height="1000%" class="anim-shape"></rect>
+                </g>
+
+                <!-- Transparent copy of text to keep patterned text selectable -->
+                <use xlink:href="Tamvan" class="text--transparent"></use>
+
+            </svg>
+        </div>
+   
+    <!-- /container -->
+</body>
+
+</html>
